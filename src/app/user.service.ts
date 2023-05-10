@@ -4,12 +4,15 @@ import { User} from "./user"
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { LoginService } from './login.service';
-
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+
+  private messageSource = new BehaviorSubject('default message');
+  currentMessage = this.messageSource.asObservable();
 
   constructor(private http: HttpClient) { }
 
@@ -23,7 +26,9 @@ export class UserService {
       }
     }
 
-    this.http.patch("https://finalexam-13182-default-rtdb.firebaseio.com/" + "users.json", body).subscribe(data => console.log(data))
+    this.http.patch("https://finalexam-13182-default-rtdb.firebaseio.com/" + "users.json", body).subscribe(data => {
+      this.messageSource.next("")
+    })
   }
 
   login(username: string): Observable<any>{

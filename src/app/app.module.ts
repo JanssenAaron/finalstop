@@ -18,6 +18,7 @@ import { ShortproductComponent } from './shortproduct/shortproduct.component';
 import { OrderspopupComponent } from './orderspopup/orderspopup.component';
 import { OrderInfoComponent } from './order-info/order-info.component';
 import { SearchpopupComponent } from './searchpopup/searchpopup.component';
+import { ToastComponent } from './toast/toast.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { SearchpopupComponent } from './searchpopup/searchpopup.component';
     ShortproductComponent,
     OrderspopupComponent,
     OrderInfoComponent,
-    SearchpopupComponent
+    SearchpopupComponent,
+    ToastComponent
   ],
   imports: [
     BrowserModule,
