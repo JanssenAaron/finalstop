@@ -1,0 +1,10 @@
+
+<h1 mat-dialog-title>Shopping Cart</h1>
+<div mat-dialog-content>
+  <ul>
+    <li *ngFor="let id of products">
+        <app-shortproduct [id]="id"></app-shortproduct>
+    </li>
+  </ul>
+  <h4>Total {{cartTotal | currency}}</h4>
+</div>

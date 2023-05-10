@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light p-4">
+    <a class="navbar-brand" href="#">Final Stop</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div *ngIf="!loggedIn" class="collapse navbar-collapse" id="navbarSupportedContent">
+      <form class="form-inline my-2 my-lg-0">
+        <input #usernameInput class="form-control mr-sm-2" type="search" placeholder="Username" aria-label="Username">
+        <div  class="btn btn-outline-success my-2 my-sm-0"  (click)="createUser(usernameInput.value)">Create User</div>
+        <div  class="btn btn-outline-success my-2 my-sm-0"  (click)="loginUser(usernameInput.value)">Login</div>
+      </form>
+    </div>
+
+    
+    <div *ngIf="loggedIn">
+      <div  mat-button class="btn btn-outline-success my-2 my-sm-0" (click)="openDialog()">View Cart</div>
+      <div  mat-button class="btn btn-outline-success my-2 my-sm-0" (click)="checkout()">Checkout</div>
+      <div  mat-button class="btn btn-outline-success my-2 my-sm-0" (click)="openOrderDialog()">View Orders</div>
+      <input #searchInput class="form-control mr-sm-2" type="search" placeholder="search" aria-label="Search">
+      <div  mat-button class="btn btn-outline-success my-2 my-sm-0" (click)="openSearchDialog(searchInput.value)">Search</div>
+  </div>
+    
+  </nav>

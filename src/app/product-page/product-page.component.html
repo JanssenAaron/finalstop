@@ -1,0 +1,26 @@
+
+<mat-paginator #paginator
+               class="demo-paginator"
+               (page)="handlePageEvent($event)"
+               [length]="20"
+               [pageSize]="10"
+               [disabled]="false"
+               [showFirstLastButtons]="true"
+               [pageSizeOptions]="[10]"
+               [hidePageSize]="true"
+               [pageIndex]="page.pageIndex"
+               aria-label="Select page">
+</mat-paginator>
+
+
+<div class="row">
+    <div class="col" *ngFor="let id of ids; index as i">
+        <app-product-info [id]="id"></app-product-info>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col" *ngFor="let id of ids; index as i">
+        <app-product-info [id]="id+5"></app-product-info>
+    </div>
+</div>

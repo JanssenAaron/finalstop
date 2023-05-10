@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>Search</h1>
+<div mat-dialog-content>
+  <ul>
+    <li *ngFor="let id of ids">
+        <app-product-info [id]="id"></app-product-info>
+    </li>
+  </ul>
+
+</div>

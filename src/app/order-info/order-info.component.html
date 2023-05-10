@@ -1,0 +1,7 @@
+<h3>{{order.orderDate | date}}</h3>
+<h4>{{order.orderTime.hours}}:{{order.orderTime.minutes}}</h4>
+<ul>
+    <li *ngFor="let id of order.productids">
+        <app-shortproduct [id]="id"></app-shortproduct>
+    </li>
+  </ul>

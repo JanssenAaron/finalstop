@@ -1,0 +1,17 @@
+<mat-card class="example-card container">
+    <mat-card-header>
+      <mat-card-title>{{product.title}}</mat-card-title>
+      <mat-card-subtitle>{{product.catergory}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image class="product-image" src="{{product.image}}">
+    <mat-card-content>
+      <p *ngIf="showMore">
+        {{product.description}}
+      </p>
+      <h5>{{product.price | currency }}</h5>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="addToCart()">Add to Cart</button>
+      <button mat-raised-button color="primary" (click)="ShowMore()">Show More</button>
+    </mat-card-actions>
+  </mat-card>
